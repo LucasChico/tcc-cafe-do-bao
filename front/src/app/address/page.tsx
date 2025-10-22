@@ -10,7 +10,7 @@ const AddressScreen = () => {
   const handleAddAddress = async (e) => {
     e.preventDefault();
     const [cep, bairro, rua, numero, complemento] = e.target.elements;
-    const response = await fetch("http://localhost:3000/enderecos", {
+    const response = await fetch(`${process.env.API_URL}/enderecos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

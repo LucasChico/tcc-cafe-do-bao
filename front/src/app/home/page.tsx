@@ -19,14 +19,14 @@ const HomeScreen = () => {
 
   useEffect(() => {
     if (selectedCategory) {
-      fetch(`http://localhost:3000/categorias/${selectedCategory}/produtos`)
+      fetch(`${process.env.API_URL}/categorias/${selectedCategory}/produtos`)
         .then((res) => res.json())
         .then(setProducts);
     }
   }, [selectedCategory]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/categorias")
+    fetch(`${process.env.API_URL}/categorias`)
       .then((res) => res.json())
       .then((categories) => {
         setCategories(categories);
@@ -84,7 +84,9 @@ const HomeScreen = () => {
                 product={product}
                 onClick={() => handleAddToCart(product)}
               />
-              <p className="text-sm text-gray-600 mt-1">Quantidade: {quantidade}</p>
+              <p className="text-sm text-gray-600 mt-1">
+                Quantidade: {quantidade}
+              </p>
             </div>
           );
         })}

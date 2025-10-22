@@ -18,7 +18,7 @@ const CheckoutScreen = () => {
   });
 
   useEffect(() => {
-    fetch("http://localhost:3000/enderecos", {
+    fetch(`${process.env.API_URL}/enderecos`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
@@ -36,14 +36,14 @@ const CheckoutScreen = () => {
       return;
     }
 
-    if (pedido.status !== 'checkout') {
-      window.location.pathname = 'home';
+    if (pedido.status !== "checkout") {
+      window.location.pathname = "home";
     }
 
     if (selectedAddress) {
-      console.log('vai cair aqui dentro um dia?');
+      console.log("vai cair aqui dentro um dia?");
 
-      fetch(`http://localhost:3000/pedidos/${pedido.idPedido}/endereco`, {
+      fetch(`${process.env.API_URL}/pedidos/${pedido.idPedido}/endereco`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
