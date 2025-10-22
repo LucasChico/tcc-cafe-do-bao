@@ -19,14 +19,14 @@ const HomeScreen = () => {
 
   useEffect(() => {
     if (selectedCategory) {
-      fetch(`${process.env.API_URL}/categorias/${selectedCategory}/produtos`)
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/categorias/${selectedCategory}/produtos`)
         .then((res) => res.json())
         .then(setProducts);
     }
   }, [selectedCategory]);
 
   useEffect(() => {
-    fetch(`${process.env.API_URL}/categorias`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/categorias`)
       .then((res) => res.json())
       .then((categories) => {
         setCategories(categories);

@@ -69,7 +69,7 @@ export default function PaymentScreen() {
       setQrCode(Math.random().toString(36).substring(2, 15));
     }
 
-    fetch(`${process.env.API_URL}/pedidos/${pedido.idPedido}/enviar_entrega`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/pedidos/${pedido.idPedido}/enviar_entrega`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -18,7 +18,7 @@ const CheckoutScreen = () => {
   });
 
   useEffect(() => {
-    fetch(`${process.env.API_URL}/enderecos`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/enderecos`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
@@ -43,7 +43,7 @@ const CheckoutScreen = () => {
     if (selectedAddress) {
       console.log("vai cair aqui dentro um dia?");
 
-      fetch(`${process.env.API_URL}/pedidos/${pedido.idPedido}/endereco`, {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/pedidos/${pedido.idPedido}/endereco`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

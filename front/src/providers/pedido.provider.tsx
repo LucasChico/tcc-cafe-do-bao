@@ -34,7 +34,7 @@ export const PedidoProvider = ({ children }) => {
 
   const obterPedidoEmAntamento = async () => {
     const response = await fetch(
-      `${process.env.API_URL}/pedidos?idCliente=${idCliente()}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/pedidos?idCliente=${idCliente()}`,
       {
         method: "GET",
         headers: {
@@ -55,7 +55,7 @@ export const PedidoProvider = ({ children }) => {
   };
 
   const abrirPedido = async () => {
-    const response = await fetch(`${process.env.API_URL}/pedidos`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pedidos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -78,7 +78,7 @@ export const PedidoProvider = ({ children }) => {
     let pedidoAtual = pedido;
 
     const response = await fetch(
-      `${process.env.API_URL}/pedidos/${pedidoAtual.idPedido}/produtos`,
+      `${process.env.NEXT_PUBLIC_API_URL}/pedidos/${pedidoAtual.idPedido}/produtos`,
       {
         method: "POST",
         headers: {
@@ -105,7 +105,7 @@ export const PedidoProvider = ({ children }) => {
     }
 
     const response = await fetch(
-      `${process.env.API_URL}/pedidos/${pedido.idPedido}/checkout`,
+      `${process.env.NEXT_PUBLIC_API_URL}/pedidos/${pedido.idPedido}/checkout`,
       {
         method: "POST",
         headers: {
