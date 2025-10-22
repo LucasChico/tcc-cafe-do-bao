@@ -8,7 +8,7 @@
     "dev": "nodemon --exec ts-node index.ts",
     "front:dev": "next dev ./front --turbopack --port 3500",
     "front:build": "next build ./front",
-    "front:start": "next start ./front --port 3500",
+    "front:start": "next start ./front",
     "dev:all": "concurrently \"npm run dev\" \"npm run front:dev\""
   },
   "author": "",
